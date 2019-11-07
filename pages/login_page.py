@@ -9,8 +9,8 @@ class LoginPage(BasePage):
         self.should_be_register_form()
 
     def should_be_login_url(self):
-        #assert "login1" in self.browser.current_url, "word \"login\" not in current url"
-        assert "login" in self.browser.current_url, "'login' not in current url"
+        #assert "login1" in self.browser.current_url, "word \"login\" not in current url"    #red Test
+        assert "login" in self.browser.current_url, "'login' not in current url"           #green Test
 
     def should_be_login_form(self):
         assert self.browser.find_element(*LoginPageLocators.LOGIN_FORM), "login_form isn't presented"
