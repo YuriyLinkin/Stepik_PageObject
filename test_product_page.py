@@ -1,3 +1,4 @@
+import time
 from .pages.product_page import ProductPage
 
 def test_guest_can_add_product_to_basket(browser):
@@ -6,8 +7,7 @@ def test_guest_can_add_product_to_basket(browser):
     product_page = ProductPage(browser, product_link)
     product_page.open()
     product_page.should_be_add_to_basket_button()    # verify AddToBasket button is exist on current page
-    browser.ADDBASKET_BUTTON.click()
-
-    product_page.should_be_add_to_basket_button()
+    product_page.solve_quiz_and_get_code()
+    time.sleep(5)
     product_page.verify_message_added_product_name_to_basket()
     product_page.verify_message_product_price_to_basket()
