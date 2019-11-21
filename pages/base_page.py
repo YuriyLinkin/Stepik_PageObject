@@ -24,6 +24,9 @@ class BasePage():
         self.browser.find_element(*BasePageLocators.LOGIN_LINK).click()
         #return LoginPage(browser=self.browser, url=self.browser.current_url)     #2nd way to implicit navigation between pages
 
+    def go_to_basket_page(self):
+        self.browser.find_element(*BasePageLocators.VIEW_BASKET).click()
+
 
     def is_element_present(self, how, what):
         try:
@@ -36,8 +39,8 @@ class BasePage():
         try:
             WebDriverWait(self.browser, timeout).until(EC.presence_of_element_located((how, what)))
         except (TimeoutException):
-            return False
-        return True
+            return True
+        return False
 
     def is_disappeared(self, how, what, timeout=4):
         try:

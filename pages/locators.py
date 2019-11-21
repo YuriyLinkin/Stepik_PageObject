@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 
 class BasePageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
-    #LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link")
+    VIEW_BASKET = (By.XPATH, "//a[text()='View basket']")
 
 class LoginPageLocators():
     LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
@@ -16,5 +16,7 @@ class ProductPageLocators():
     SUCCESS_MESSAGE_WITH_PRICE = (By.CSS_SELECTOR, "#messages .alert:nth-child(3) strong")
     SUCCESS_MESSAGE = (By.CSS_SELECTOR, "#messages .alert:nth-child(1)")
 
-
+class BasketPageLocators():
+    BASKET_ITEM = (By.CSS_SELECTOR, ".basket-items")
+    BASKET_MESSAGE = (By.XPATH, "//p[contains(text(), 'Your basket is empty.')]")
 
