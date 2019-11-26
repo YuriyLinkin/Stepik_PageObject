@@ -3,10 +3,16 @@ from selenium.webdriver.common.by import By
 class BasePageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     VIEW_BASKET = (By.XPATH, "//a[text()='View basket']")
+    USER_ICON = (By.CSS_SELECTOR, ".icon-user")
 
 class LoginPageLocators():
     LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
     REGISTER_FORM = (By.CSS_SELECTOR, "#register_form")
+    EMAIL = (By.NAME, "registration-email")
+    PASSWORD = (By.NAME, "registration-password1")
+    PASSWORD_REPEAT = (By.NAME, "registration-password2")
+    SUBMIT = (By.NAME, "registration_submit")
+
 
 class ProductPageLocators():
     ADDBASKET_BUTTON = (By.CSS_SELECTOR, ".btn.btn-lg.btn-primary.btn-add-to-basket")

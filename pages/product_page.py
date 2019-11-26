@@ -16,14 +16,12 @@ class ProductPage(BasePage):
     def verify_message_added_product_name_to_basket(self):
         #product_name = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME).text              # №1 option
         message_pname = self.browser.find_element(*ProductPageLocators.SUCCESS_MESSAGE_FOR_PRODUCT)
-
         assert self.get_product_name() == message_pname.text, "Book wasn't added to cart"  # changed to get_product_name() instead product_name
 
 
     def verify_message_product_price_to_basket(self):
         #product_price = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE).text             # №1 option
         message_pprice = self.browser.find_element(*ProductPageLocators.SUCCESS_MESSAGE_WITH_PRICE)
-
         assert self.get_product_price() == message_pprice.text, "Incorrect product price in cart"  # changed to get_product_price() instead product_price
 
     def should_not_be_success_message(self):
